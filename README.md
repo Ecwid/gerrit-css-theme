@@ -2,6 +2,10 @@ Gerrit CSS theme
 ======================
 Clean and modern CSS theme for Gerrit.
 
+![](https://raw.githubusercontent.com/Ecwid/gerrit-css-theme/master/assets/gerrit-dashboard.png)
+
+You can view more [screenshots](https://github.com/Ecwid/gerrit-css-theme/tree/master/assets).
+
 ## How to install
 
 Configuration can either be sitewide or per-project.
