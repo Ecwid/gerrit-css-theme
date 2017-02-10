@@ -1,0 +1,1132 @@
+@charset "UTF-8";
+
+/*!
+ * Gerrit CSS theme 1.0.0 (https://github.com/Ecwid/gerrit-css-theme)
+ * Licensed under the Apache 2.0 license
+ * Copyright (c) 2017 ECWID S.à r.l. All rights reserved.
+ */
+
+/* Common styles */
+
+@import url(//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700&subset=latin,latin-ext,cyrillic);
+
+body, table td, select {
+	font-family: 'Open Sans', sans-serif !important;
+	font-size: 13px;
+}
+body,
+.gwt-DialogBox .dialogMiddleCenter {
+	color: #333;
+}
+:focus {
+	outline: 0;
+}
+input:not([type="checkbox"]),
+textarea {
+	-moz-appearance: none;
+}
+a {
+	transition: background 0.1s linear 0s, color 0.1s linear 0s;
+}
+.gerritTopMenu a:link,
+.gerritTopMenu a:active,
+.gerritTopMenu a:visited {
+	color: #000;
+}
+.gerritTopMenu a:hover {
+	color: #007AC9;
+}
+.gerritBody a:link,
+#gerrit_btmmenu a:link,
+.gerritBody a:visited,
+#gerrit_btmmenu a:visited,
+.popupContent a:link,
+.popupContent a:visited {
+	color: #02779D;
+	text-decoration: none;
+}
+.gerritBody a:active,
+#gerrit_btmmenu a:active,
+.popupContent a:active {
+	color: #54BFD6;
+}
+.gerritBody a:hover,
+#gerrit_btmmenu a:hover,
+.popupContent a:hover {
+	color: #17A3C1;	
+	text-decoration: none;
+}
+input[type="text"] {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	border: 1px solid #C7C7C7;
+	border-radius: 2px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.07) inset;
+	box-sizing: border-box;
+	color: #666;
+	display: inline-block;
+	font-size: 13px;
+	height: 2.462em;
+	line-height: 1.75em;
+	outline: 0 none;
+	padding: 0.308em 0.615em;
+	transition: background-color 0.1s linear 0s, color 0.1s linear 0s, border-color 0.1s linear 0s, box-shadow 0.1s linear 0s;
+	vertical-align: middle;
+}
+input[type="text"]:focus {
+	color: #606060;
+	border: 2px solid #0c92e3;
+	background-color: #fff;
+	box-shadow: 0 0 4px #d1eafa;
+	padding: .231em .538em;
+	outline: 0;
+}
+button {
+	box-sizing: border-box;
+}
+
+/* Top Menu */
+
+.gerritTopMenu#gerrit_topmenu {
+	left: auto;
+	margin: 0 auto;
+	box-sizing: border-box;
+	max-width: 1600px;
+	margin-top: 16px;
+}
+.gerritTopMenu .gwt-TabBar .gwt-TabBarItem {
+	font-size: 16px;
+}
+.gerritTopMenu .gwt-TabBar .gwt-TabBarItem:hover {
+	color: #56C0E7;
+}
+.gerritTopMenu .gwt-TabBar .gwt-TabBarItem-selected {
+	color: #199DEE;
+	border-bottom-color: #199DEE;
+}
+.gerritTopMenu .topmenuMenuLeft .gwt-TabPanelBottom {
+	margin-top: 0px;
+}
+.gerritTopMenu .menuItem.activeRow {
+	color: #fff;
+	background: #199DEE;
+}
+.gerritTopMenu .topmenuMenuLeft {
+	padding: 0;
+}
+.gerritTopMenu .topmenuMenuLeft table tr td {
+	border-bottom: none;
+}
+.gerritTopMenu .topmenuMenuLeft tbody tr td table.gwt-TabBar {
+	border-bottom: none;
+}
+.gerritTopMenu .topmenuMenuLeft table.gwt-TabBar:after {
+	border-top: 3px solid #D4E1E7;
+	content: "";
+	display: block;
+	margin-top: -3px;
+	position: absolute;
+	width: 100%;
+	z-index: -1;
+}
+.gerritTopMenu .gwt-TabBar .gwt-TabBarItem {
+	font-size: 16px;
+	font-weight: normal;
+	text-transform: uppercase;
+	padding: 0 1em 5px;
+}
+.gerritTopMenu .topmenuMenuLeft .menuItem:hover {
+	color: #333;
+	background-color: #b5dff0;
+}
+.gerritTopMenu .linkMenuBar {
+	font-size: 13px;
+}
+.gerritTopMenu .topmenuMenuLeft .menuItem {
+	display: inline-block;
+	text-decoration: none;
+	margin-right: 3px;
+	padding: 5px 15px;
+	border-radius: 4px;
+}
+.gerritTopMenu .popupContent a {
+	padding: 0 10px 0 10px;
+}
+.gerritTopMenu .userInfoPopup {
+	margin-top: 3px;
+	border-color: #C7C7C7;
+}
+@media screen and (max-width: 1470px) {
+	.gerritTopMenu .topmenuMenuRight {
+		float: none;
+	}
+}
+@media screen and (max-width: 1280px) {
+	.gerritTopMenu .topmenuMenuRight .searchPanel {
+		display: block;
+		position: relative;
+		top: 39px;
+	}
+	.gerritTopMenu .topmenuMenuRight .linkMenuBar {
+		display: block;
+		position: relative;
+		top: -33px;
+	}
+}
+@media (max-width: 1200px) {
+	.gerritTopMenu .searchPanel input[type="text"],
+	.gerritTopMenu .searchPanel input[type="text"]:hover {
+		max-width: 200px;
+	}
+}
+
+/* Search Panel */
+
+.gerritTopMenu .searchPanel input[type="text"],
+.gerritTopMenu .searchPanel input[type="text"]:hover {
+	width: 295px !important;
+	padding-right: 40px;
+	font-size: 14px;
+}
+.gerritTopMenu .searchPanel .searchDropdown {
+	font-size: 13px;
+	color: #666;
+	height: 32px;
+    border: 1px solid #c7c7c7;
+    border-radius: 2px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.07) inset;
+	margin-left: 8px;
+	vertical-align: top;
+}
+.gerritTopMenu .topmenuTDglue {
+	width: auto;
+}
+.gerritTopMenu .menuBarUserNamePanel {
+	margin-left: 25px;
+}
+.gerritTopMenu .linkMenuBar {
+	display: inline-block;
+	margin-top: 8px;
+}
+.gerritTopMenu .searchPanel .searchTextBox {
+	margin-top: 0 !important;
+	float: left;
+}
+.gerritTopMenu .searchPanel .searchButton {
+	box-sizing: border-box;
+	height: 34px;
+	border-radius: 2px;
+	font-size: 13px;
+	margin-left: 8px;
+	padding: 0 12px;
+	border: 2px solid #199DEE;
+	vertical-align: top;
+	background-color: #199DEE;
+	transition: 0.1s background-color linear;
+}
+.gerritTopMenu .searchPanel .searchButton:hover {
+	opacity: 0.8;
+}
+
+/* Header */
+
+#gerrit_header {
+	max-width: 1600px;
+	margin: 0 auto;
+}
+#gerrit_header #diffy_logo {
+	display: none !important;
+}
+#gerrit_header #gitiles_link_div {
+	padding-right: 16px;
+}
+
+/* Body */
+
+.gerritBody {
+	font-size: 13px !important;
+	max-width: 1600px;
+	margin: 8px auto;
+}
+.gerritBody > div {
+	padding: 0 16px;
+}
+.gerritBody .screenHeader {
+	font-size: 16px;
+	margin: 3px 0 5px;
+}
+.gerritBody td {
+	line-height: 1.5;
+}
+.gerritBody .changeTable {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+.gerritBody .changeTable td {
+	padding: 5px 10px;
+}
+.gerritBody .changeTable .dataHeader {
+	padding: 8px 10px;
+}
+.gerritBody table.changeTable tr:first-child td:first-child {
+	border-top-left-radius: 4px;
+}
+.gerritBody table.changeTable tr:first-child td:last-child {
+	border-top-right-radius: 4px;
+}
+.gerritBody .changeTable .iconHeader,
+.gerritBody .changeTable .dataHeader,
+.gerritBody .com-google-gerrit-client-change-FileTable-FileTableCss-nohover:first-child th {
+	color: #333;
+	font-style: normal;
+	font-weight: bold;
+	background: #E1E4E6;
+	border: none;
+	width: auto;
+}
+.gerritBody table.changeTable tr:nth-child(even) {
+	background: #F8F8F8;
+}
+.gerritBody .changeTable a.gwt-InlineHyperlink:hover {
+	color: #308ECA;
+	text-decoration: none;
+}
+.gerritBody .changeTable .dataCell {
+	height: auto;
+	line-height: 1.3;
+}
+.gerritBody .changeTable td.iconCell,
+.gerritBody .changeTable td.changeTypeCell {
+	vertical-align: middle;
+	padding-top: 4px;
+}
+.gerritBody .changeTable td.leftMostCell {
+	padding-top: 4px;
+}
+.gerritBody .changeTable td.patchSizeCell {
+	padding-top: 3px;
+}
+.gerritBody .changeTable .iconCell,
+.gerritBody .changeTable .leftMostCell,
+.gerritBody .changeTable .emptySection,
+.gerritBody table.changeTable .dataCell {
+	border: none;
+}
+.gerritBody .iconCell .gwt-Image {
+	display: block;
+	margin-top: 2px;
+}
+.gerritBody .leftMostCell .gwt-Image {
+	margin-top: 0;
+}
+.gerritBody .changeScreenDescription {
+	white-space: normal;
+}
+.gerritBody .changeTable .activeRow,
+.gerritBody .accountDashboard.changeTable .activeRow,
+.gerritBody .accountDashboard.changeTable .activeRow a {
+	background: #E3F2FF !important;
+}
+
+/* Next/Prev links */
+
+.gerritBody .changeTablePrevNextLinks td {
+	width: auto;
+	font-size: 12px;
+}
+.gerritBody .changeTablePrevNextLinks {
+	margin-top: 20px;
+	padding-right: 0;
+}
+.gerritBody .changeTablePrevNextLinks .gwt-Hyperlink {
+	font-size: 0;
+}
+.gerritBody .changeTablePrevNextLinks .gwt-Hyperlink a {
+	color: transparent;
+}
+.gerritBody .changeTablePrevNextLinks td:first-child .gwt-Hyperlink a {
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA40lEQVR4Xo2QvarCMBhATS2CILi6Ork6uwjOBaH0BeRO+gTOXdzETRzETfoAd7hYcBHu4AMIglOfQRBc6ukgfCQhTeDwLTknP6osy0bdUkr1GQcYwhon/QqBh1xJ/zCGLiylENTIlXSBnnAeXgHkhHGCjhDuENUGkOeMDFpCvsKI9xdSCC3ySn8n5BAjP/X9oRCbjB38aPIRZshv4ZkByCDR5C3iwtTsf7AH/ZQBN2t7BTjpjzGFlxAm8GtGzICMxN4RGfC9iSsgI7k74g7ISGSJbIyAI3K2RPpGwDNSwA1SKXwANLxQBcCHKCQAAAAASUVORK5CYII=) no-repeat 6px center;
+	background-size: 10px auto;
+	display: inline-block;
+	background-color: #F6F6F6;
+	border: 1px solid #CCCCCC;
+	border-radius: 3px;
+	padding: 11px;
+	cursor: pointer;
+	margin-right: 12px;
+}
+.gerritBody .changeTablePrevNextLinks td:last-child .gwt-Hyperlink a {
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA6UlEQVR4XpWTIavCUBhAdxUEwWSymqxmy0CrMBCTL4lBBH/Aq1qsL/nSsO4HGB4OLILBKggmYT/A+mAg85ju5e6y3Xvh8I3BOfsGm8iyzPscIcSKsYQrTLn/8CxORbn+hib4cCbYdQ3cFKEFJyK+SyCAuyI04EBkbBXgnRNGDy6KUIOIyKI4ICNPxgBiRajClsjGFBBI+ZtC1Bg7mGhCCHOcV24DbZMUvhB+tcAMItMrmLaoMzpaIIWwOCDlPfQV+R8CNvvTAtbySMp6wP3JMmApxzbfwY9BHkq5PNA2yEeXf2ENN0ikXH7eDZ5X/oLmZWIAAAAASUVORK5CYII=) no-repeat 7px center;
+	background-size: 10px auto;
+	display: inline-block;
+	background-color: #F6F6F6;
+	border: 1px solid #CCCCCC;
+	border-radius: 3px;
+	padding: 11px;
+	cursor: pointer;
+}
+.gerritBody .changeTablePrevNextLinks td .gwt-Hyperlink a:hover:after {
+	color: #0287B2;
+}
+.gerritBody .screen {
+	padding: 0;
+	font-size: 14px;
+	line-height: 1.3;
+}
+.gerritBody .screen table table td {
+	padding: 5px 10px;
+	line-height: 1;
+}
+.gerritBody .screen .gwt-Button {
+	margin-right: 10px;
+}
+.gerritBody .changeScreenDescription {
+	max-width: 600px;
+}
+.gerritBody .changeScreenDescription,
+.gerritBody .changeScreenDescription textarea {
+	font-family: "Courier New", Courier, "Lucida Sans Typewriter", "Lucida Typewriter", monospace;
+	font-size: 13px;
+	line-height: 1.5;
+}
+.gerritBody .gwt-DisclosurePanel td {
+	padding: 0;
+}
+.gwt-DisclosurePanel-open > table td {
+	padding: 0;
+}
+.gerritBody .infoBlock td {
+	white-space: normal;
+}
+.gerritBody .infoBlock td,
+.gerritBody .infoTable td,
+.gerritBody .infoTable td.header,
+.gerritBody .blockHeader td {
+	padding: 5px 10px;
+}
+.gerritBody .commentPanelHeader td {
+	padding: 5px 10px;
+}
+.gerritBody .changeComments .gwt-Button,
+.gerritBody .addSshKeyPanel .gwt-Button {
+	margin-top: 12px;
+}
+.gerritBody .addWatchPanel {
+	margin-bottom: 12px;
+}
+.gerritBody .infoBlock,
+.gerritBody .changeTable {
+	margin-bottom: 8px;
+}
+.gerritBody .screen .infoBlock td {
+	padding: 8px 10px;
+	line-height: 1;
+}
+.gerritBody .screen .infoBlock table td {
+	border-color: transparent;
+	padding: 0 8px 0 0;
+}
+.gerritBody .addReviewer {
+	margin-top: 12px;
+	margin-left: 0;
+}
+.gerritBody .addReviewer input[type="text"] {
+	float: left;
+	margin-right: 10px;
+}
+.gerritBody .header > table td {
+	padding: 2px 3px 2px 0 !important;
+}
+.gerritBody .gwt-DisclosurePanel,
+.gerritBody .selectPatchSetOldVersion,
+.gerritBody .changeComments {
+	margin: 20px 0;
+	padding-top: 0;
+}
+.gerritBody .changeScreen .gwt-DisclosurePanel .content {
+	font-size: 12px !important;
+}
+.gerritBody .patchSetActions .gwt-Button {
+	font-size: 13px;
+}
+.gerritBody .changeTable .changeTypeCell {
+	border: none;
+}
+.gerritBody .downloadLinkHeader {
+	padding: 6px;
+	border: none;
+}
+.gerritBody .downloadLinkCopyLabel {
+	padding: 8px 0 4px;
+	white-space: normal;
+}
+.gerritBody .downloadLink,
+.gerritBody .linkMenuItemNotLast {
+	border-color: #92A8B1;
+}
+.gerritBody .downloadLink:hover {
+	color: #02779D;
+}
+.gerritBody .downloadLinkList .downloadLink_Active {
+	background: #E3F2FF;
+	padding: 4px 12px 3px;
+}
+.gerritBody .downloadLinkListCell {
+	padding: 0 !important;
+}
+.gerritBody .gwt-DisclosurePanel .content {
+	border-color: transparent;
+}
+.gerritBody .commentPanelBorder {
+	border-radius: 0;
+}
+.gerritBody .missingApprovalList {
+	margin-top: 12px;
+}
+.gerritBody .missingApprovalList li {
+	margin-top: 8px;
+}
+.gerritBody .commentPanelMessage {
+	padding-bottom: 0.5em;
+}
+.gerritBody .commentPanelMessage p {
+	padding: 0 0 3px 6px;
+}
+.gerritBody .menuScreenMenuBar {
+	border-color: #D4E1E7;
+}
+.gerritBody .menuScreenMenuBar .menuItem {
+	padding-left: 1em;
+	padding-right: 1em;
+}
+.gerritBody .addMemberTextBox {
+	float: left;
+	margin-right: 8px;
+}
+.gerritBody .groupMembersTable,
+.gerritBody .groupIncludesTable {
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+.gerritBody .screen table .groupUUIDPanel td,
+.gerritBody .screen table .groupNamePanel td,
+.gerritBody .screen table .groupOwnerPanel td,
+.gerritBody .screen table .groupDescriptionPanel td {
+	padding: 4px 10px;
+}
+.gerritBody .downloadLinkCopyLabel {
+	font-size: 14px;
+}
+.gerritBody .screen .infoBlock .parentsTable td {
+	padding: 4px;
+}
+.gerritBody .changeTable .filePathCell {
+	white-space: normal;
+}
+.gerritBody .changeTable .diffLinkCell {
+	white-space: nowrap;
+}
+.gerritBody .commentPanelSummary {
+	white-space: normal;
+	line-height: 1.3;
+}
+.gerritBody .pagingLink {
+	font-size: 14px;
+}
+
+/* Patch Content */
+
+.gerritBody .patchContentTable td {
+	padding: 2px;
+	line-height: 1.5;
+}
+.gerritBody .commentEditorPanel {
+	padding: 0 0 20px 20px;
+}
+.gerritBody .patchContentTable td.commentHolder.commentPanelLast,
+.gerritBody .patchContentTable td.commentHolderLeftmost,
+.gerritBody .patchContentTable td.commentHolder {
+	border-color: #B0BDCC;
+}
+.gerritBody .commentPanelButtons .gwt-Button {
+	font-size: 11px;
+	margin-top: 5px;
+}
+.gerritBody .patchContentTable td.commentHolder {
+	border-right: none;
+}
+.patchContentTable .activeRow .iconCell,
+.patchContentTable .activeRow .lineNumber,
+.patchContentTable .activeRow .fileLine,
+.patchContentTable .activeRow .diffText,
+.patchContentTable .activeRow td.commentHolder,
+.patchContentTable .activeRow .wdc,
+.patchContentTable .activeRow .wdd,
+.patchContentTable .activeRow .wdi,
+.patchContentTable .activeRow .iconCellOfFileCommentRow,
+.patchContentTable .activeRow td.commentHolder.commentPanelLast {
+	border-color: #fff3d3 !important;
+	background: #fff3d3 !important;
+}
+
+/* Footer */
+
+#gerrit_btmmenu {
+	max-width: 1600px;
+	margin: 20px auto 10px;
+	padding-right: 25px !important;
+	font-size: 12px;
+	padding-top: 10px;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-infoTable {
+	display: block;
+	width: 100%;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-infoTable > tbody {
+	display: block;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-infoTable > tbody > tr {
+	display: block;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-infoTable > tbody > tr:after {
+	content: '';
+	clear: both;
+	display: table;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-infoTable > tbody > tr .com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-commitColumn {
+	float: left;
+	width: calc(100% - 712px);
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-infoTable > tbody > tr .com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-infoColumn {
+	float: right;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-infoTable > tbody > tr .com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-relatedColumn {
+	float: left;
+	width: 370px;
+	margin-top: 110px;
+	position: relative;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-infoTable > tbody > tr .com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-relatedColumn .gwt-TabPanelBottom {
+	margin-top: -12px;
+}
+.com-google-gerrit-client-change-FileTable-FileTableCss-table {
+	width: 100%;
+}
+.com-google-gerrit-client-change-Message_BinderImpl_GenCss_style-messageBox {
+	width: 100%;
+	border-radius: 0 !important;
+	box-sizing: border-box;
+}
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-scroll {
+	width: 100%;
+	height: auto !important;
+	padding: 15px 0;
+}
+th.com-google-gerrit-client-change-FileTable-FileTableCss-deltaColumn1,
+th.com-google-gerrit-client-change-FileTable-FileTableCss-deltaColumn2 {
+	text-align: right;
+	padding: 5px 10px;
+	background: transparent;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-sectionHeader {
+	margin: 0;
+}
+.com-google-gerrit-client-change-Message_BinderImpl_GenCss_style-header {
+	height: 30px;
+	line-height: 30px;
+}
+.com-google-gerrit-client-change-Message_BinderImpl_GenCss_style-closed,
+.com-google-gerrit-client-change-Message_BinderImpl_GenCss_style-closed * {
+	box-sizing: border-box;
+	border-radius: 0 !important;
+}
+.com-google-gerrit-client-change-Message_BinderImpl_GenCss_style-closed .com-google-gerrit-client-change-Message_BinderImpl_GenCss_style-avatar {
+	top: 7px;
+	left: 2px;
+}
+.com-google-gerrit-client-change-Message_BinderImpl_GenCss_style-contents {
+	margin-left: 40px;
+}
+.com-google-gerrit-client-change-Message_BinderImpl_GenCss_style-messageBox .com-google-gerrit-client-change-Message_BinderImpl_GenCss_style-avatar {
+	top: 7px;
+	left: 6px;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-sectionHeader {
+	margin-top: 20px;
+}
+.com-google-gerrit-client-change-RelatedChanges-RelatedChangesCss-subject {
+	width: 90%;
+}
+.com-google-gerrit-client-change-RelatedChanges-RelatedChangesCss-row {
+	height: 30px;
+	line-height: 30px;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-infoLine {
+	left: auto;
+	right: 348px;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-sectionHeader .com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-headerButtons {
+	border: none;
+	top: 0;
+	left: auto;
+	right: 12px;
+}
+.gwt-TabPanel.com-google-gerrit-client-change-RelatedChanges-RelatedChangesCss-tabPanel {
+	table-layout: fixed;
+	margin-left: -40px;
+	width: calc(100% + 40px);
+}
+@media (min-width: 1600px) {
+		.gwt-TabPanel.com-google-gerrit-client-change-RelatedChanges-RelatedChangesCss-tabPanel {
+		width: calc(100% + 100px);
+		margin-left: -100px;
+	}
+}
+.gwt-TabPanel.com-google-gerrit-client-change-RelatedChanges-RelatedChangesCss-tabPanel .gwt-TabBarItem-wrapper {
+	padding: 0;
+}
+.gwt-TabPanel.com-google-gerrit-client-change-RelatedChanges-RelatedChangesCss-tabPanel .gwt-TabBarItem-wrapper .gwt-TabBarItem {
+	margin-bottom: -3px;
+	border-color: #ccc !important;
+	background: transparent !important;
+}
+.gwt-TabPanel.com-google-gerrit-client-change-RelatedChanges-RelatedChangesCss-tabPanel .gwt-TabBarItem-wrapper .gwt-TabBarItem.gwt-TabBarItem-selected {
+	border-color: #199DEE !important;
+}
+.gwt-TabPanel.com-google-gerrit-client-change-RelatedChanges-RelatedChangesCss-tabPanel .gwt-TabBarItem-wrapper .gwt-TabBarItem .gwt-Label {
+	font-weight: normal;
+	padding: 5px;
+	font-size: 14px !important;
+}
+.com-google-gerrit-client-change-RelatedChanges-RelatedChangesCss-tabPanel {
+	width: 100%;
+}
+.gwt-TabBar {
+	border-bottom: 3px solid #ccc;
+}
+.com-google-gerrit-client-diff-Header_BinderImpl_GenCss_style-header {
+	padding: 10px 0;
+}
+.com-google-gerrit-client-diff-InsertCommentBubble_BinderImpl_GenCss_style-message {
+	background: #DEF;
+}
+.com-google-gerrit-client-diff-CommentBox-Style-commentWidgets {
+	background: #f1f1f1;
+	padding: 0 5px;
+	border: 1px solid #C7C7C7;
+	border-radius: 3px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.07);
+}
+.com-google-gerrit-client-diff-CommentBox-Style-commentWidgets,
+.com-google-gerrit-client-diff-CommentBox-Style-commentWidgets * {
+	box-sizing: border-box;
+}
+.com-google-gerrit-client-diff-CommentBox-Style-commentWidgets .com-google-gerrit-client-diff-CommentBox-Style-header,
+.com-google-gerrit-client-diff-CommentBox-Style-commentWidgets * .com-google-gerrit-client-diff-CommentBox-Style-header {
+	padding: 5px 0;
+}
+.com-google-gerrit-client-diff-CommentBox-Style-commentWidgets .com-google-gerrit-client-diff-CommentBox-Style-contents,
+.com-google-gerrit-client-diff-CommentBox-Style-commentWidgets * .com-google-gerrit-client-diff-CommentBox-Style-contents {
+	margin-left: 0;
+}
+.com-google-gerrit-client-diff-CommentBox-Style-commentWidgets .com-google-gerrit-client-diff-CommentBox-Style-contents .com-google-gerrit-client-diff-DraftBox_BinderImpl_GenCss_style-editArea,
+.com-google-gerrit-client-diff-CommentBox-Style-commentWidgets .com-google-gerrit-client-diff-CommentBox-Style-contents .com-google-gerrit-client-diff-CommentBox-Style-message,
+.com-google-gerrit-client-diff-CommentBox-Style-commentWidgets * .com-google-gerrit-client-diff-CommentBox-Style-contents .com-google-gerrit-client-diff-DraftBox_BinderImpl_GenCss_style-editArea,
+.com-google-gerrit-client-diff-CommentBox-Style-commentWidgets * .com-google-gerrit-client-diff-CommentBox-Style-contents .com-google-gerrit-client-diff-CommentBox-Style-message {
+	max-width: none;
+	width: 100%;
+	font-weight: 400;
+	background-color: #FAFBFC;
+	border: 1px solid #C7C7C7;
+	border-radius: 3px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.07) inset;
+	box-sizing: border-box;
+	color: #606060;
+	display: inline-block;
+	font-size: 13px;
+	line-height: 1.75em;
+	outline: 0 none;
+	padding: 0.308em 0.615em;
+	transition: background-color 0.1s linear 0s, color 0.1s linear 0s, border-color 0.1s linear 0s, box-shadow 0.1s linear 0s;
+	vertical-align: middle;
+}
+.com-google-gerrit-client-diff-CommentBox-Style-commentWidgets .com-google-gerrit-client-diff-CommentBox-Style-contents .com-google-gerrit-client-diff-DraftBox_BinderImpl_GenCss_style-editArea + div,
+.com-google-gerrit-client-diff-CommentBox-Style-commentWidgets .com-google-gerrit-client-diff-CommentBox-Style-contents .com-google-gerrit-client-diff-CommentBox-Style-message + div,
+.com-google-gerrit-client-diff-CommentBox-Style-commentWidgets * .com-google-gerrit-client-diff-CommentBox-Style-contents .com-google-gerrit-client-diff-DraftBox_BinderImpl_GenCss_style-editArea + div,
+.com-google-gerrit-client-diff-CommentBox-Style-commentWidgets * .com-google-gerrit-client-diff-CommentBox-Style-contents .com-google-gerrit-client-diff-CommentBox-Style-message + div {
+	padding: 5px 0;
+}
+.com-google-gerrit-client-diff-CommentBox-Style-commentWidgets .com-google-gerrit-client-diff-CommentBox-Style-contents .com-google-gerrit-client-diff-CommentBox-Style-message,
+.com-google-gerrit-client-diff-CommentBox-Style-commentWidgets * .com-google-gerrit-client-diff-CommentBox-Style-contents .com-google-gerrit-client-diff-CommentBox-Style-message {
+	cursor: default;
+}
+.com-google-gerrit-client-diff-DraftBox_BinderImpl_GenCss_style-draft {
+	height: 23px;
+	line-height: 25px;
+	font-size: 14px;
+	border-radius: 2px;
+}
+.com-google-gerrit-client-diff-DraftBox_BinderImpl_GenCss_style-draft:hover {
+	opacity: 0.8;
+}
+.com-google-gerrit-client-diff-DraftBox_BinderImpl_GenCss_style-button {
+	height: 25px;
+	border-radius: 2px;
+}
+.com-google-gerrit-client-diff-DraftBox_BinderImpl_GenCss_style-button div {
+	font-size: 14px;
+	font-weight: normal;
+	width: auto;
+	padding: 0 10px;
+}
+.com-google-gerrit-client-diff-DraftBox_BinderImpl_GenCss_style-button:hover {
+	opacity: 0.8;
+}
+.button.com-google-gerrit-client-diff-DraftBox_BinderImpl_GenCss_style-discard {
+	position: static;
+}
+.com-google-gerrit-client-diff-CommentBox-Style-commentBox button {
+	border: none;
+}
+.com-google-gerrit-client-diff-CommentBox-Style-summary,
+.com-google-gerrit-client-diff-CommentBox-Style-date {
+	line-height: 25px;
+	top: 7px;
+}
+.com-google-gerrit-client-diff-CommentBox-Style-message p {
+	line-height: 25px;
+}
+#change_actions button,
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-headerButtons button {
+	border-radius: 2px;
+	font-size: 12px;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-headerButtons button {
+	margin-right: 12px;
+}
+#change_actions button:hover,
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-headerButtons button:hover {
+	opacity: 0.8;
+}
+button.com-google-gerrit-client-change-Reviewers_BinderImpl_GenCss_style-openAdd {
+	border-radius: 2px;
+	height: 23px;
+	font-size: 12px;
+}
+button.com-google-gerrit-client-change-Reviewers_BinderImpl_GenCss_style-openAdd:hover {
+	opacity: 0.8;
+}
+.projectFilterLabel {
+	line-height: 30px;
+}
+.changeTable .changeSize {
+	border: 1px solid rgba(0, 0, 0, 0.3);
+}
+[title="Create follow-up change"] {
+	display: none;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-infoColumn {
+	width: 325px;
+	padding-right: 0;
+}
+.com-google-gerrit-client-change-Message_BinderImpl_GenCss_style-contents p {
+	margin-top: 3px;
+	margin-bottom: 3px;
+}
+.com-google-gerrit-client-diff-CommentBox-Style-commentWidgets {
+	width: calc(100% - 28px);
+	max-width: none;
+	margin-left: 28px;
+}
+.com-google-gerrit-client-diff-Header_BinderImpl_GenCss_style-navigation {
+	top: 8px;
+}
+.com-google-gerrit-client-diff-Header_BinderImpl_GenCss_style-navigation img,
+.com-google-gerrit-client-diff-Header_BinderImpl_GenCss_style-navigation a {
+	width: 20px;
+	height: 20px;
+	margin-right: 5px;
+}
+.com-google-gerrit-client-diff-Header_BinderImpl_GenCss_style-navigation a {
+	margin-top: 2px;
+}
+.com-google-gerrit-client-change-RelatedChanges-RelatedChangesCss-tabPanel .gwt-TabBarRest {
+	background: transparent;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-infoLine {
+	top: -2px;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-headerButtons {
+	top: 0;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-popdown button:hover {
+	opacity: 0.7;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-popdown button div {
+	position: relative;
+	padding-right: 19px;
+	font-size: 13px;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-popdown button div::before {
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 8px 8px 0 8px;
+	border-color: #000 transparent transparent transparent;
+	right: 0;
+	top: 5px;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-popdown button div::after {
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 8px 8px 0 8px;
+	border-color: #EEE transparent transparent transparent;
+	right: 0;
+	top: 3px;
+}
+#change_infoTable th,
+#change_infoTable td {
+	vertical-align: middle;
+	line-height: 15px;
+}
+#change_infoTable > tbody > tr:nth-child(2) > th {
+	vertical-align: top;
+	padding-top: 9px;
+}
+#change_infoTable .com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-ownerPanel img,
+#change_infoTable .com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-label_user img {
+	margin-right: 4px;
+}
+#change_infoTable .com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-ownerPanel {
+	padding-left: 3px;
+	font-size: 13px;
+}
+#change_infoTable .com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-label_user {
+	padding-top: 4px;
+}
+#change_infoTable button.com-google-gerrit-client-change-Reviewers_BinderImpl_GenCss_style-openAdd {
+	margin-top: 0;
+	margin-bottom: -5px;
+}
+#change_infoTable input {
+	max-width: 245px !important;
+}
+#change_infoTable .com-google-gerrit-client-change-Resources-Style-button {
+	height: 25px;
+	font-size: 12px;
+	border-radius: 2px;
+}
+#change_infoTable .com-google-gerrit-client-change-Reviewers_BinderImpl_GenCss_style-cancel {
+	margin-right: 0;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-label_user {
+	background: transparent;
+	border: none;
+}
+#change_actions {
+	margin-left: -10px;
+	padding-bottom: 5px;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-labels {
+	margin-left: -10px;
+	width: 100%;
+}
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-scroll {
+	border: none !important;
+}
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-text {
+	line-height: 15px;
+}
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-collapsed .com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-scroll {
+	padding-top: 7px;
+}
+.com-google-gerrit-client-change-Reviewers_BinderImpl_GenCss_style-openAdd {
+	float: left !important;
+	margin-top: 6px !important;
+	margin-bottom: -8px;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-label_user img,
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-ownerPanel img {
+	position: relative;
+	top: -1px;
+}
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-userPanel img {
+	position: relative;
+	margin-right: 4px;
+}
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-userPanel a {
+	position: relative;
+	top: -2px;
+}
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-header td,
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-header th {
+	line-height: 25px;
+	padding: 0 5px !important;
+}
+.com-google-gwtexpui-clippy-client-ClippyCss-control {
+	right: -24px !important;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-replyBox {
+	border-radius: 0 0 9px 9px;
+	padding: 5px;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-statusRight {
+	height: 31px;
+}
+.com-google-gerrit-client-change-Resources-Style-section {
+	border: none !important;
+}
+.com-google-gerrit-client-change-Resources-Style-section textarea {
+	max-width: none;
+	width: 100%;
+	font-weight: 400;
+	background-color: #FAFBFC;
+	border: 1px solid #C7C7C7;
+	border-radius: 3px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.07) inset;
+	box-sizing: border-box;
+	color: #606060;
+	display: inline-block;
+	font-size: 13px;
+	line-height: 1.75em;
+	outline: 0 none;
+	padding: 0.308em 0.615em;
+	transition: background-color 0.1s linear 0s, color 0.1s linear 0s, border-color 0.1s linear 0s, box-shadow 0.1s linear 0s;
+	vertical-align: middle;
+}
+.com-google-gerrit-client-change-Resources-Style-section button {
+	height: 25px;
+	border-radius: 2px;
+}
+.com-google-gerrit-client-change-Resources-Style-section .com-google-gerrit-client-change-ReplyBox_BinderImpl_GenCss_style-cancel {
+	margin-right: 0;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-diffBase {
+	font-size: 14px;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-diffBase select {
+	height: 23px;
+	margin-top: 1px;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-sectionHeader button {
+	margin-top: 1px;
+}
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-text {
+	padding: 0 5px;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-label_reject .com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-label_user img {
+	margin-right: 5px;
+	position: relative;
+	top: 2px;
+}
+#change_infoTable .com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-label_user {
+	display: inline-block;
+}
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-scroll {
+	border: none;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-labels .com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-label_user img {
+	position: relative;
+	top: 2px;
+}
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-text {
+	line-height: 23px;
+}
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-header td {
+	line-height: 23px;
+}
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-clippy {
+	margin: 7px 0;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-projectSettings img {
+	position: relative;
+	top: 4px;
+}
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-text {
+	height: 106px;
+}
+.gwt-TabPanelBottom > div > div > div {
+	height: 120px !important;
+}
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-scroll {
+	width: calc(100% + 370px);
+}
+.stringListPanelButtons {
+	margin: 0;
+}
+.stringListPanelButtons td,
+.stringListPanelButtons th {
+	padding: 5px 0;
+}
+.stringListPanelButtons .gwt-Button {
+	height: 30px ;
+	font-size: 14px;
+}
+.com-google-gerrit-client-diff-SideBySide_BinderImpl_GenCss_style-sbs {
+	position: absolute;
+	left: 20px;
+	right: 20px;
+	background: #fff;
+}
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-more {
+	display: none;
+}
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-scroll {
+	margin-bottom: 10px;
+	padding-bottom: 0;
+}
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-header th,
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-header td {
+	display: inline-block;
+}
+@media (max-width: 1280px) {
+	.menuBarUserNamePanel {
+		position: absolute;
+		right: 0;
+		top: 22px;
+	}
+	.screenHeader {
+		display: block;
+	}
+	.topmenu {
+		margin-top: 10px;
+	}
+	.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-relatedColumn {
+		width: calc(100% - 342px) !important;
+		margin-top: 0 ;
+	}
+	.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-relatedColumn .gwt-TabPanel.com-google-gerrit-client-change-RelatedChanges-RelatedChangesCss-tabPanel {
+		margin-left: 0;
+		width: 100%;
+	}
+	.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-sectionHeader + div .com-google-gerrit-client-change-Message_BinderImpl_GenCss_style-contents {
+		border-radius: 0;
+	}
+}
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-clippy input {
+	position: relative;
+	top: -10px;
+	margin-bottom: -22px;
+}
+.com-google-gerrit-client-change-Message_BinderImpl_GenCss_style-contents p,
+.com-google-gerrit-client-change-Message_BinderImpl_GenCss_style-contents blockquote {
+	margin: 0;
+}
+.com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-collapsed .com-google-gerrit-client-change-CommitBox_BinderImpl_GenCss_style-scroll {
+	padding-top: 10px;
+}
+.com-google-gerrit-client-change-FileTable-FileTableCss-table th {
+	padding: 3px 0;
+	vertical-align: middle;
+}
+.com-google-gerrit-client-change-ChangeScreen_BinderImpl_GenCss_style-sectionHeader {
+	padding: 5px 8px;
+}
+.com-google-gerrit-client-change-RelatedChanges-RelatedChangesCss-pointer {
+	padding-top: 5px;
+}
