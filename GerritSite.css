@@ -1131,3 +1131,8 @@ button.com-google-gerrit-client-change-Reviewers_BinderImpl_GenCss_style-openAdd
 .com-google-gerrit-client-change-RelatedChanges-RelatedChangesCss-pointer {
 	padding-top: 5px;
 }
+
+table.com-google-gerrit-client-admin-ProjectAccessScreen_BinderImpl_GenCss_style-errorMessage + .gwt-Button {
+    display: none; 
+}
+
