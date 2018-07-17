@@ -26,6 +26,12 @@ input:not([type="checkbox"]),
 textarea {
 	-moz-appearance: none;
 }
+
+input[type="radio"] {
+        height:16px !important;
+        -moz-appearance: radio !important;
+}
+
 a {
 	transition: background 0.1s linear 0s, color 0.1s linear 0s;
 }
